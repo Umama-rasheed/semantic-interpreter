@@ -1,0 +1,490 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#dae2fd", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "on-background": "#0b1c30", "on-primary-fixed": "#100069", "surface-variant": "#d3e4fe", "secondary": "#565e74", "surface-bright": "#f8f9ff", "tertiary-fixed-dim": "#4cd7f6", "primary-container": "#4338ca", "surface-container-lowest": "#ffffff", "on-surface-variant": "#464554", "on-surface": "#0b1c30", "on-tertiary-fixed-variant": "#004e5c", "on-primary": "#ffffff", "on-tertiary-fixed": "#001f26", "on-secondary-fixed-variant": "#3f465c", "on-error": "#ffffff", "on-secondary-fixed": "#131b2e", "tertiary": "#00414d", "primary": "#2a14b4", "surface-dim": "#cbdbf5", "outline": "#777586", "secondary-fixed": "#dae2fd", "primary-fixed": "#e3dfff", "surface-container-highest": "#d3e4fe", "on-secondary": "#ffffff", "surface-container-high": "#dce9ff", "on-tertiary-container": "#4ad5f4", "inverse-on-surface": "#eaf1ff", "error": "#ba1a1a", "tertiary-container": "#005a6a", "on-secondary-container": "#5c647a", "tertiary-fixed": "#acedff", "on-error-container": "#93000a", "surface-tint": "#5148d7", "inverse-primary": "#c3c0ff", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "primary-fixed-dim": "#c3c0ff", "on-primary-container": "#c1beff", "background": "#f8f9ff", "surface-container-low": "#eff4ff", "surface-container": "#e5eeff", "on-primary-fixed-variant": "#372abf", "outline-variant": "#c7c4d7", "surface": "#f8f9ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-md": "1rem", "margin": "2rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "gutter-mobile": "1rem" }, fontFamily: { "display-hero": ["Inter"], "body-lg": ["Inter"], "code-lg": ["JetBrains Mono"], "headline-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "code-md": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"], "body-md": ["Inter"], "headline-md": ["Inter"], "display-hero-mobile": ["Inter"], "code-sm": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "display-hero": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "code-lg": ["14px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "code-md": ["13px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-hero-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="min-h-full bg-gradient-to-b from-[#f5f7ff] to-[#ffffff] text-on-surface font-body-md text-body-md flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-bright/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.03)] pt-safe"><div class="h-14 px-gutter-mobile flex items-center justify-between max-w-5xl mx-auto w-full"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[18px]">schema</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Semantic Decoder</span><span class="font-label-caps text-label-caps uppercase text-secondary -mt-1">Sentence to Meaning</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/60"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-code-sm text-code-sm text-secondary">Rule Engine</span></div><button id="btn-open-login" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter-mobile pt-14 pb-12 max-w-5xl mx-auto"><div class="flex flex-col w-full pb-8">
+<!-- 1. Header Area -->
+<header class="flex flex-col items-start gap-space-xs pt-space-xs pb-space-md">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/70 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase text-primary font-semibold tracking-wider">Rule-Based NLP</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface tracking-tight mt-1">
+      Smart Sentence-to-Meaning Interpreter
+    </h1>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+      Type any English sentence and see how a computer extracts its structured logical meaning.
+    </p>
+</header>
+<!-- 2. Input Card (Main Interaction Area) -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md mb-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-secondary uppercase flex items-center justify-between" for="nlp-sentence-input">
+<span>Natural Language Input</span>
+<span class="font-code-sm text-code-sm text-secondary" id="char-counter">46 chars</span>
+</label>
+<div class="relative bg-surface-container-low/40 rounded-lg p-space-sm focus-within:bg-surface-container-lowest focus-within:shadow-md transition-all">
+<textarea class="w-full bg-transparent resize-none border-0 p-0 text-on-surface font-body-lg text-body-lg focus:outline-none focus:ring-0 leading-relaxed placeholder:text-secondary/50" id="nlp-sentence-input" placeholder="e.g. Rahul opened the door in the morning..." rows="3">The student submitted the assignment yesterday.</textarea>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-between gap-space-sm pt-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary hover:text-on-surface font-label-caps text-label-caps transition-colors cursor-pointer" id="btn-clear" type="button">
+<span class="material-symbols-outlined text-[16px]">backspace</span>
+<span>Clear</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-md text-body-md font-medium shadow-sm transition-all transform active:scale-[0.98] cursor-pointer" id="btn-interpret" type="button">
+<span>Interpret Meaning</span>
+<span class="hidden sm:inline-block font-code-sm text-code-sm text-on-primary-container/80 bg-primary/30 px-1.5 py-0.5 rounded">↵</span>
+</button>
+</div>
+<!-- Example Chips -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex items-center gap-1 text-secondary font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">lightbulb</span>
+<span>Try an example</span>
+</div>
+<div class="flex flex-wrap gap-1.5" id="preset-container">
+<button class="preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-sentence="Rahul opened the door." type="button">
+          Rahul opened the door.
+        </button>
+<button class="preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-primary-container text-on-primary font-medium shadow-xs transition-colors cursor-pointer" data-sentence="The student submitted the assignment yesterday." type="button">
+          The student submitted the assignment yesterday.
+        </button>
+<button class="preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-sentence="The teacher explained the lesson in the classroom." type="button">
+          The teacher explained the lesson in the classroom.
+        </button>
+<button class="preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" data-sentence="She bought groceries at the market." type="button">
+          She bought groceries at the market.
+        </button>
+</div>
+</div>
+</section>
+<!-- 3. Results Section -->
+<section class="flex flex-col gap-space-md mb-space-md">
+<!-- 3a. Semantic Component Cards Grid -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">data_object</span>
+          Extracted Semantic Components
+        </span>
+<span id="found-badge" class="font-code-sm text-code-sm text-secondary bg-surface-container px-2 py-0.5 rounded-full">0/5 Found</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+<!-- 1. Subject -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-xs flex flex-col justify-between">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary">Subject</span>
+</div>
+<div class="mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" id="val-subject">Student</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-1">Noun Phrase (Agent)</span>
+</div>
+<!-- 2. Action -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-xs flex flex-col justify-between">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary">Action</span>
+</div>
+<div class="mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" id="val-action">Submitted</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-1">Finite Verb (VBD)</span>
+</div>
+<!-- 3. Object -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-xs flex flex-col justify-between">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary">Object</span>
+</div>
+<div class="mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" id="val-object">Assignment</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-1">Patient / Theme</span>
+</div>
+<!-- 4. Time -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-xs flex flex-col justify-between">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary">Time</span>
+</div>
+<div class="mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" id="val-time">Yesterday</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-1">Temporal Adverb</span>
+</div>
+<!-- 5. Place (Null state demo) -->
+<div class="col-span-2 sm:col-span-2 bg-surface-container-lowest rounded-xl p-space-sm shadow-xs flex flex-col justify-between">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-caps text-label-caps uppercase text-secondary">Place</span>
+</div>
+<div class="mt-0.5 flex items-center gap-2">
+<span class="font-body-md text-body-md italic text-secondary font-normal" id="val-place">Not detected</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary" id="badge-place">null</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary mt-1">Locative Preposition Phrase</span>
+</div>
+</div>
+</div>
+<!-- 3b. Structured Meaning Representation Card (Hero Output) -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl shadow-xl overflow-hidden p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed-dim"></span>
+</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-surface-variant font-medium">
+            Structured Meaning Representation
+          </span>
+</div>
+<button class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container-highest/20 hover:bg-surface-container-highest/40 text-surface-variant hover:text-surface-bright transition-colors text-code-sm font-code-sm cursor-pointer" id="btn-copy" title="Copy Predicate Formula" type="button">
+<span class="material-symbols-outlined text-[15px]" id="copy-icon">content_copy</span>
+<span id="copy-text">Copy</span>
+</button>
+</div>
+<!-- Predicate Display -->
+<div class="bg-on-surface/40 rounded-lg p-space-md text-center flex flex-col items-center justify-center min-h-[72px]">
+<div class="font-code-lg text-code-lg tracking-wide text-surface-bright" id="meaning-formula">
+<span class="text-tertiary-fixed-dim font-bold">SUBMIT</span><span class="text-secondary-fixed">(</span><span class="text-inverse-primary font-semibold">Student</span><span class="text-secondary-fixed">, </span><span class="text-inverse-primary font-semibold">Assignment</span><span class="text-secondary-fixed">, </span><span class="text-tertiary-fixed font-semibold">Yesterday</span><span class="text-secondary-fixed">)</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-secondary-fixed-dim font-code-sm text-code-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">check_circle</span>
+          Action(Subject, Object, Time, Place)
+        </span>
+<span id="arity-counter" class="text-surface-variant/80">Arity: 0</span>
+</div>
+</div>
+<!-- 3c. Processing Pipeline Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-xs flex flex-col gap-2.5">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<h2 class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold">
+          How the System Processed the Sentence
+        </h2>
+</div>
+<!-- Pipeline Steps (Scrollable/Wrap) -->
+<div class="overflow-x-auto pb-1 -mx-space-xs px-space-xs">
+<div class="flex items-center min-w-max gap-1.5">
+<!-- Step 1 -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-high/60">
+<span class="material-symbols-outlined text-[14px] text-primary">input</span>
+<span class="font-code-sm text-code-sm font-medium text-on-surface">Input</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<!-- Step 2 -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-high/60">
+<span class="material-symbols-outlined text-[14px] text-primary">format_list_bulleted</span>
+<span class="font-code-sm text-code-sm font-medium text-on-surface">Tokenize</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<!-- Step 3 -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-high/60">
+<span class="material-symbols-outlined text-[14px] text-primary">fact_check</span>
+<span class="font-code-sm text-code-sm font-medium text-on-surface">Rule Match</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<!-- Step 4 -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-high/60">
+<span class="material-symbols-outlined text-[14px] text-primary">account_tree</span>
+<span class="font-code-sm text-code-sm font-medium text-on-surface">Extract</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<!-- Step 5 -->
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span class="font-code-sm text-code-sm font-semibold">Representation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Explainer Section -->
+<section class="bg-surface-container-low/60 rounded-xl p-space-md mb-space-md">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+    
+    <!-- Left Side: The Concept -->
+    <div class="flex items-start gap-space-sm">
+      <div class="w-8 h-8 rounded-lg bg-secondary-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
+        <span class="material-symbols-outlined text-[18px]">info</span>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">What is Semantic Interpretation?</h3>
+        <p class="font-body-md text-body-md text-secondary leading-relaxed">
+         Semantic Interpretation is the process of taking a normal English sentence and translating it into a format a computer can understand. Instead of just reading words, the computer identifies <strong>who</strong> did <strong>what</strong>, <strong>where</strong>, and <strong>when</strong>, and turns it into a logical formula like <code class="font-code-sm text-code-sm bg-primary/10 text-primary font-semibold px-1.5 py-0.5 rounded border border-primary/20">ACTION(Subject, Object, Time, Place)</code>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Side: The 5 Steps -->
+    <div class="flex flex-col gap-2">
+      <h3 class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold mb-1">The Pipeline Explained</h3>
+      
+      <div class="flex items-start gap-2">
+        <span class="font-code-sm text-code-sm text-primary font-bold min-w-[20px]">1.</span>
+        <p class="font-body-sm text-body-sm text-secondary"><strong>Input:</strong> The user enters a raw English sentence into the application.</p>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="font-code-sm text-code-sm text-primary font-bold min-w-[20px]">2.</span>
+        <p class="font-body-sm text-body-sm text-secondary"><strong>Tokenize:</strong> Punctuation is stripped, and the sentence is split into an array of individual words.</p>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="font-code-sm text-code-sm text-primary font-bold min-w-[20px]">3.</span>
+        <p class="font-body-sm text-body-sm text-secondary"><strong>Rule Match:</strong> The engine scans for a verb in the dictionary and checks for passive voice markers ("was", "by").</p>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="font-code-sm text-code-sm text-primary font-bold min-w-[20px]">4.</span>
+        <p class="font-body-sm text-body-sm text-secondary"><strong>Extract:</strong> Surrounding words are classified. The noun before the verb becomes the Subject; nouns after become Objects, Places, or Time.</p>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="font-code-sm text-code-sm text-primary font-bold min-w-[20px]">5.</span>
+        <p class="font-body-sm text-body-sm text-secondary"><strong>Representation:</strong> The extracted components are dynamically formatted into a final logic predicate formula.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 5. Minimal Footer -->
+<footer class="flex flex-col items-center justify-center text-center gap-1 py-space-sm text-secondary">
+  <p class="font-label-caps text-label-caps font-semibold text-on-surface">
+    Rule-Based Semantic Interpretation &middot; Logic Representation &middot; Real-Time Parsing
+  </p>
+
+  <p class="font-code-sm text-code-sm text-secondary/70">
+    Engine: Python · Flask · Rule-Based Parsing
+  </p>
+</footer>
+</div>
+<script>
+  (function() {
+    const textarea = document.getElementById('nlp-sentence-input');
+    const charCounter = document.getElementById('char-counter');
+    const btnInterpret = document.getElementById('btn-interpret');
+    const btnClear = document.getElementById('btn-clear');
+    const btnCopy = document.getElementById('btn-copy');
+    const copyText = document.getElementById('copy-text');
+    const copyIcon = document.getElementById('copy-icon');
+    const foundBadge = document.getElementById('found-badge');
+    const arityCounter = document.getElementById('arity-counter');
+
+    const valSubject = document.getElementById('val-subject');
+    const valAction = document.getElementById('val-action');
+    const valObject = document.getElementById('val-object');
+    const valTime = document.getElementById('val-time');
+    const valPlace = document.getElementById('val-place');
+    const badgePlace = document.getElementById('badge-place');
+    const meaningFormula = document.getElementById('meaning-formula');
+    const presetChips = document.querySelectorAll('.preset-chip');
+
+    let currentFormulaRaw = "";
+
+    function updateCharCount() {
+      if (textarea && charCounter) {
+        charCounter.textContent = `${textarea.value.length} chars`;
+      }
+    }
+
+    // --- THIS FUNCTION READS THE PYTHON BACKEND RESPONSE ---
+    function renderOutput(data) {
+      // Dynamic 0/5 counter
+      const foundCount = [data.subject, data.action, data.object, data.time, data.place].filter(Boolean).length;
+      foundBadge.textContent = `${foundCount}/5 Found`;
+
+      // Subject
+      valSubject.textContent = data.subject || "Not detected";
+      valSubject.className = data.subject ? "font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" : "font-body-md text-body-md italic text-secondary font-normal";
+
+      // Action
+      valAction.textContent = data.action || "Not detected";
+      valAction.className = data.action ? "font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" : "font-body-md text-body-md italic text-secondary font-normal";
+
+      // Object
+      valObject.textContent = data.object || "Not detected";
+      valObject.className = data.object ? "font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" : "font-body-md text-body-md italic text-secondary font-normal";
+
+      // Time
+      valTime.textContent = data.time || "Not detected";
+      valTime.className = data.time ? "font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight" : "font-body-md text-body-md italic text-secondary font-normal";
+
+      // Place
+      if (data.place) {
+        valPlace.textContent = data.place;
+        valPlace.className = "font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight";
+        badgePlace.textContent = "LOC";
+        badgePlace.className = "font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-secondary-container text-primary font-medium";
+      } else {
+        valPlace.textContent = "Not detected";
+        valPlace.className = "font-body-md text-body-md italic text-secondary font-normal";
+        badgePlace.textContent = "null";
+        badgePlace.className = "font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container text-secondary";
+      }
+
+      // Hero Formula
+      const pred = data.predicate || "UNKNOWN";
+      const paramsList = data.params || [];
+      currentFormulaRaw = `${pred}(${paramsList.join(', ')})`;
+
+      // Dynamic Arity Counter
+      if (arityCounter) {
+        arityCounter.textContent = `Arity: ${paramsList.length}`;
+      }
+
+      if (paramsList.length === 0) {
+          meaningFormula.innerHTML = `<span class="text-tertiary-fixed-dim font-bold">${pred}</span><span class="text-secondary-fixed">()</span>`;
+      } else {
+          const formattedParams = paramsList.map((p, idx) => {
+            const isLast = idx === paramsList.length - 1;
+            const colorClass = idx === 0 ? "text-inverse-primary" : (idx === 1 ? "text-inverse-primary" : "text-tertiary-fixed");
+            return `<span class="${colorClass} font-semibold">${p}</span>` + (!isLast ? `<span class="text-secondary-fixed">, </span>` : '');
+          }).join('');
+          meaningFormula.innerHTML = `<span class="text-tertiary-fixed-dim font-bold">${pred}</span><span class="text-secondary-fixed">(</span>${formattedParams}<span class="text-secondary-fixed">)</span>`;
+      }
+    }
+
+    // Input listening
+    if (textarea) {
+      textarea.addEventListener('input', updateCharCount);
+      textarea.addEventListener('keydown', (e) => {
+        // Automatically interpret on "Enter" (unless Shift is held)
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault(); 
+          btnInterpret.click();
+        }
+      });
+    }
+
+    // Clear Button
+    if (btnClear) {
+      btnClear.addEventListener('click', () => {
+        textarea.value = '';
+        updateCharCount();
+        textarea.focus();
+        presetChips.forEach(c => {
+          c.className = "preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer";
+        });
+      });
+    }
+
+    // --- INTERPRET BUTTON (TALKS TO PYTHON) ---
+    if (btnInterpret) {
+      btnInterpret.addEventListener('click', async () => {
+        const text = textarea.value;
+        if (!text.trim()) return;
+
+        btnInterpret.classList.add('opacity-80', 'scale-95');
+        btnInterpret.disabled = true;
+
+        try {
+          // Send sentence to Flask backend
+          const res = await fetch('/interpret', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sentence: text })
+          });
+          
+          const data = await res.json();
+          
+          if (data.error) {
+              console.warn(data.error);
+              return;
+          }
+
+          // Update UI with Python's logic
+          renderOutput(data);
+          
+        } catch (err) {
+          console.error("Interpret failed:", err);
+        } finally {
+          btnInterpret.classList.remove('opacity-80', 'scale-95');
+          btnInterpret.disabled = false;
+        }
+      });
+    }
+
+    // Preset Chips
+    presetChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const sentence = chip.getAttribute('data-sentence');
+        textarea.value = sentence;
+        updateCharCount();
+
+        presetChips.forEach(c => {
+          c.className = "preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer";
+        });
+        chip.className = "preset-chip text-left px-3 py-1.5 rounded-full font-body-sm text-body-sm bg-primary-container text-on-primary font-medium shadow-xs transition-colors cursor-pointer";
+
+        btnInterpret.click();
+      });
+    });
+
+    // Copy to Clipboard
+    if (btnCopy) {
+      btnCopy.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(currentFormulaRaw);
+          copyText.textContent = "Copied!";
+          copyIcon.textContent = "done";
+          setTimeout(() => {
+            copyText.textContent = "Copy";
+            copyIcon.textContent = "content_copy";
+          }, 1800);
+        } catch (err) {
+          copyText.textContent = "Copied!";
+          setTimeout(() => {
+            copyText.textContent = "Copy";
+          }, 1800);
+        }
+      });
+    }
+
+    // Login Modal Logic
+    const loginModal = document.getElementById('login-modal');
+    const btnOpenLogin = document.getElementById('btn-open-login');
+    const btnCloseLogin = document.getElementById('btn-close-login');
+    const btnDoLogin = document.getElementById('btn-do-login');
+
+    if (btnOpenLogin) {
+      btnOpenLogin.addEventListener('click', () => {
+        loginModal.classList.remove('hidden');
+        loginModal.classList.add('flex');
+      });
+    }
+    if (btnCloseLogin) {
+      btnCloseLogin.addEventListener('click', () => {
+        loginModal.classList.add('hidden');
+        loginModal.classList.remove('flex');
+      });
+    }
+    if (btnDoLogin) {
+      btnDoLogin.addEventListener('click', () => {
+        btnDoLogin.textContent = "Success!";
+        setTimeout(() => {
+          loginModal.classList.add('hidden');
+          loginModal.classList.remove('flex');
+          btnDoLogin.textContent = "Log In";
+        }, 1000);
+      });
+    }
+
+    updateCharCount();
+  })();
+</script>
+</main>
+
+<!-- Login Modal (Hidden by default) -->
+<div id="login-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/40 backdrop-blur-sm transition-opacity">
+  <div class="bg-surface-container-lowest rounded-xl shadow-2xl p-space-lg w-11/12 max-w-sm flex flex-col gap-space-md">
+    <div class="flex justify-between items-center">
+      <h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Sign In</h3>
+      <button id="btn-close-login" class="text-secondary hover:text-on-surface"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <p class="font-body-sm text-secondary">Sign in to save your semantic interpretation history.</p>
+    <input type="text" placeholder="Username" class="px-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest focus:outline-none focus:border-primary font-body-md">
+    <input type="password" placeholder="Password" class="px-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest focus:outline-none focus:border-primary font-body-md">
+    <button id="btn-do-login" class="mt-2 w-full py-2 bg-primary text-on-primary rounded-lg font-medium hover:bg-primary-container transition-colors">Log In</button>
+  </div>
+</div>
+
+</body></html>
