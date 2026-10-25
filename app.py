@@ -131,10 +131,6 @@ STOPWORDS = {
 # ============================================================
 
 def tokenize(sentence):
-    """
-    Split sentence into lowercase words, stripping punctuation.
-    Example: "Rahul opened the door." -> ["rahul", "opened", "the", "door"]
-    """
     clean = re.sub(r"[^\w\s]", "", sentence.lower())
     return clean.split()
 
@@ -144,10 +140,6 @@ def tokenize(sentence):
 # ============================================================
 
 def is_passive(tokens):
-    """
-    Heuristic: passive if an auxiliary verb appears AND 'by' appears.
-    Example: "The door was opened by Rahul" -> True
-    """
     return any(t in AUX_PASSIVE for t in tokens) and "by" in tokens
 
 
@@ -156,7 +148,6 @@ def is_passive(tokens):
 # ============================================================
 
 def _first_content_word(words):
-    """Return first non-stopword, non-adjective, non-time word."""
     for w in words:
         if w not in STOPWORDS and w not in ADJECTIVES and w not in TIME_WORDS:
             return w.capitalize()
@@ -164,7 +155,6 @@ def _first_content_word(words):
 
 
 def _find_adjacent_adjective(words, target):
-    """If the word immediately before 'target' is an adjective, return it."""
     try:
         idx = words.index(target)
         if idx > 0 and words[idx - 1] in ADJECTIVES:
@@ -179,51 +169,38 @@ def _find_adjacent_adjective(words, target):
 # ============================================================
 
 def extract_components(tokens):
-    """
-    Given a tokenized sentence, return a dict with:
-      subject, action, object, time, place, predicate, params
-    """
     subject = action = obj = time = place = None
     verb_index = -1
 
-    # --- 1. Find the verb ---
     for i, word in enumerate(tokens):
         if word in VERB_LOOKUP:
-            action = VERB_LOOKUP[word]   # normalized form, e.g. "OPEN"
+            action = VERB_LOOKUP[word]
             verb_index = i
             break
 
     if verb_index == -1:
-        # No recognized verb -> cannot interpret
         return {
             "subject": None, "action": None, "object": None,
             "time": None, "place": None,
             "predicate": None, "params": [], "passive": False
         }
 
-    # --- 2. Check for passive voice ---
     passive = is_passive(tokens)
-
-    # --- 3. Split tokens around the verb ---
     before = tokens[:verb_index]
     after = tokens[verb_index + 1:]
 
-    # --- 4. Handle PASSIVE case ---
     if passive and "by" in after:
-        # "The window was broken by the boy in the room yesterday"
         by_index = after.index("by")
         patient_words = before
         agent_words = after[by_index + 1:]
 
         obj = _first_content_word(patient_words)
         
-        # Grab the agent (the first word after "by")
         for word in agent_words:
             if word not in STOPWORDS and word not in ADJECTIVES:
                 subject = word.capitalize()
                 break
         
-        # Now scan the REST of the sentence for Time and Place
         place_mode = False
         for word in agent_words:
             if word in TIME_WORDS:
@@ -236,15 +213,11 @@ def extract_components(tokens):
             elif word in PLACE_NOUNS:
                 place = word.capitalize()
 
-    # --- 5. Handle PASSIVE with no agent ---
     elif passive:
-        # "The window was broken yesterday"
         obj = _first_content_word(before)
         subject = None
 
-    # --- 6. Handle ACTIVE case ---
     else:
-        # Subject: last non-stopword, non-adjective word before verb
         for word in reversed(before):
             if word in PRONOUNS:
                 subject = word.capitalize()
@@ -256,7 +229,6 @@ def extract_components(tokens):
                 subject = (adj + " " + word).capitalize() if adj else word.capitalize()
                 break
 
-        # Scan after verb for object / place / time
         place_mode = False
         for word in after:
             if word in TIME_WORDS:
@@ -276,7 +248,6 @@ def extract_components(tokens):
                 adj = _find_adjacent_adjective(after, word)
                 obj = (adj + " " + word).capitalize() if adj else word.capitalize()
 
-    # --- 7. Time and place can also appear before the verb in passive ---
     if passive:
         for word in before:
             if word in TIME_WORDS and time is None:
@@ -285,7 +256,6 @@ def extract_components(tokens):
             if word in TIME_WORDS and time is None:
                 time = word.capitalize()
 
-    # --- 8. Build params for the predicate formula ---
     params = [p for p in [subject, obj, place, time] if p]
 
     return {
@@ -311,7 +281,6 @@ def index():
 
 @app.route("/interpret", methods=["POST"])
 def interpret():
-    """JSON API called by frontend via fetch()."""
     data = request.get_json(silent=True) or {}
     sentence = (data.get("sentence") or "").strip()
 
@@ -322,6 +291,27 @@ def interpret():
     result = extract_components(tokens)
     result["tokens"] = tokens
     result["original"] = sentence
+    
+    # --- NEW: Rule-Based POS Tagger ---
+    tagged_tokens = []
+    for word in tokens:
+        if word in STOPWORDS:
+            tag = "DET"
+        elif word in ADJECTIVES:
+            tag = "ADJ"
+        elif word in VERB_LOOKUP:
+            tag = "VERB"
+        elif word in PLACE_NOUNS or word in PRONOUNS:
+            tag = "NOUN"
+        elif word in TIME_WORDS:
+            tag = "TIME"
+        else:
+            tag = "NOUN" # default fallback
+        
+        tagged_tokens.append({"word": word, "tag": tag})
+        
+    result["tagged_tokens"] = tagged_tokens
+    
     return jsonify(result)
 
 
