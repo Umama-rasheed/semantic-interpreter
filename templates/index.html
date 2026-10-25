@@ -62,7 +62,7 @@ tailwind.config = {
   } 
 };
 </script>
-<style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="min-h-full bg-gradient-to-b from-[#f1f5f9] to-[#ffffff] text-on-surface font-body-md text-body-md flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-bright/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.03)] pt-safe"><div class="h-14 px-gutter-mobile flex items-center justify-between max-w-5xl mx-auto w-full"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[18px]">schema</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Semantic Decoder</span><span class="font-label-caps text-label-caps uppercase text-secondary -mt-1">Sentence to Meaning</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/60"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-code-sm text-code-sm text-secondary">Rule Engine</span></div><button id="btn-open-login" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter-mobile pt-14 pb-12 max-w-5xl mx-auto"><div class="flex flex-col w-full pb-8">
+<style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="min-h-full bg-gradient-to-b from-[#f1f5f9] to-[#ffffff] text-on-surface font-body-md text-body-md flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-bright/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.03)] pt-safe"><div class="h-14 px-gutter-mobile flex items-center justify-between max-w-5xl mx-auto w-full"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[18px]">schema</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Semantic Decoder</span><span class="font-label-caps text-label-caps uppercase text-secondary -mt-1">Sentence to Meaning</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/60"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-code-sm text-code-sm text-secondary">Rule Engine</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter-mobile pt-14 pb-12 max-w-5xl mx-auto"><div class="flex flex-col w-full pb-8">
 <!-- 1. Header Area -->
 <header class="flex flex-col items-start gap-space-xs pt-space-xs pb-space-md">
 <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/70 shadow-sm">
@@ -282,7 +282,7 @@ tailwind.config = {
 <section class="bg-surface-container-low/60 rounded-xl p-space-md mb-space-md">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
     
-    <!-- Left Side: The Concept -->
+        <!-- Left Side: The Concept -->
     <div class="flex items-start gap-space-sm">
       <div class="w-8 h-8 rounded-lg bg-secondary-container flex-shrink-0 flex items-center justify-center text-primary mt-0.5">
         <span class="material-symbols-outlined text-[18px]">info</span>
@@ -309,7 +309,6 @@ tailwind.config = {
         </div>
       </div>
     </div>
-
     <!-- Right Side: The 5 Steps -->
     <div class="flex flex-col gap-2">
       <h3 class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold mb-1">The Pipeline Explained</h3>
@@ -541,52 +540,9 @@ tailwind.config = {
       });
     }
 
-    // Login Modal Logic
-    const loginModal = document.getElementById('login-modal');
-    const btnOpenLogin = document.getElementById('btn-open-login');
-    const btnCloseLogin = document.getElementById('btn-close-login');
-    const btnDoLogin = document.getElementById('btn-do-login');
-
-    if (btnOpenLogin) {
-      btnOpenLogin.addEventListener('click', () => {
-        loginModal.classList.remove('hidden');
-        loginModal.classList.add('flex');
-      });
-    }
-    if (btnCloseLogin) {
-      btnCloseLogin.addEventListener('click', () => {
-        loginModal.classList.add('hidden');
-        loginModal.classList.remove('flex');
-      });
-    }
-    if (btnDoLogin) {
-      btnDoLogin.addEventListener('click', () => {
-        btnDoLogin.textContent = "Success!";
-        setTimeout(() => {
-          loginModal.classList.add('hidden');
-          loginModal.classList.remove('flex');
-          btnDoLogin.textContent = "Log In";
-        }, 1000);
-      });
-    }
-
     updateCharCount();
   })();
 </script>
 </main>
-
-<!-- Login Modal (Hidden by default) -->
-<div id="login-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/40 backdrop-blur-sm transition-opacity">
-  <div class="bg-surface-container-lowest rounded-xl shadow-2xl p-space-lg w-11/12 max-w-sm flex flex-col gap-space-md">
-    <div class="flex justify-between items-center">
-      <h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Sign In</h3>
-      <button id="btn-close-login" class="text-secondary hover:text-on-surface"><span class="material-symbols-outlined">close</span></button>
-    </div>
-    <p class="font-body-sm text-secondary">Sign in to save your semantic interpretation history.</p>
-    <input type="text" placeholder="Username" class="px-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest focus:outline-none focus:border-primary font-body-md">
-    <input type="password" placeholder="Password" class="px-3 py-2 border border-outline-variant rounded-lg bg-surface-container-lowest focus:outline-none focus:border-primary font-body-md">
-    <button id="btn-do-login" class="mt-2 w-full py-2 bg-primary text-on-primary rounded-lg font-medium hover:bg-primary-container transition-colors">Log In</button>
-  </div>
-</div>
 
 </body></html>
