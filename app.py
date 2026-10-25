@@ -292,7 +292,7 @@ def interpret():
     result["tokens"] = tokens
     result["original"] = sentence
     
-    # --- NEW: Rule-Based POS Tagger ---
+    # --- FIXED: Rule-Based POS Tagger ---
     tagged_tokens = []
     for word in tokens:
         if word in STOPWORDS:
@@ -301,10 +301,12 @@ def interpret():
             tag = "ADJ"
         elif word in VERB_LOOKUP:
             tag = "VERB"
-        elif word in PLACE_NOUNS or word in PRONOUNS:
-            tag = "NOUN"
         elif word in TIME_WORDS:
             tag = "TIME"
+        elif word in PLACE_PREPS or word == "by": 
+            tag = "PREP" # Preposition handling added here
+        elif word in PLACE_NOUNS or word in PRONOUNS:
+            tag = "NOUN"
         else:
             tag = "NOUN" # default fallback
         
