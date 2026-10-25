@@ -121,7 +121,7 @@ ADJECTIVES = {
 # Words to ignore when picking subject/object
 STOPWORDS = {
     "the", "a", "an", "to", "of", "is", "was", "were", "and",
-    "with", "by", "for", "from", "that", "this", "these", "those",
+    "with", "for", "from", "that", "this", "these", "those",
     "been", "being", "be"
 }
 
