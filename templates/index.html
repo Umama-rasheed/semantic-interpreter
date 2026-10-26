@@ -229,7 +229,7 @@ tailwind.config = {
 <div class="flex items-center justify-between text-secondary-fixed-dim font-code-sm text-code-sm pt-1">
 <span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim">check_circle</span>
-          Action(Subject, Object, Time, Place)
+          Predicate(Agent, Patient, Place, Time)
         </span>
 <span id="arity-counter" class="text-surface-variant/80">Arity: 0</span>
 </div>
@@ -295,8 +295,9 @@ tailwind.config = {
         </p>
         
         <ul class="text-body-sm text-secondary space-y-1 my-1 ml-1">
-          <li class="flex items-center gap-2"><span class="text-primary font-bold">•</span> <span><strong>Agent:</strong> Who performed the action</span></li>
-          <li class="flex items-center gap-2"><span class="text-primary font-bold">•</span> <span><strong>Patient:</strong> What was affected</span></li>
+          <li class="flex items-center gap-2"><span class="text-primary font-bold">•</span> <span><strong>Predicate:</strong> The core action or verb (Action)</span></li>
+          <li class="flex items-center gap-2"><span class="text-primary font-bold">•</span> <span><strong>Agent:</strong> Who performed the action (Subject)</span></li>
+          <li class="flex items-center gap-2"><span class="text-primary font-bold">•</span> <span><strong>Patient:</strong> What was affected (Object)</span></li>
           <li class="flex items-center gap-2"><span class="text-primary font-bold">•</span> <span><strong>Context:</strong> Where and when it happened</span></li>
         </ul>
 
@@ -305,7 +306,7 @@ tailwind.config = {
         </p>
         
         <div class="mt-1 bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-3 text-center shadow-sm">
-          <code class="font-code-md text-primary font-bold tracking-wide">ACTION(Subject, Object, Time, Place)</code>
+          <code class="font-code-md text-primary font-bold tracking-wide">Predicate(Agent, Patient, Place, Time)</code>
         </div>
       </div>
     </div>
@@ -389,6 +390,7 @@ tailwind.config = {
           if (t.tag === "VERB") colorClass = "bg-primary-container text-on-primary";
           else if (t.tag === "NOUN") colorClass = "bg-secondary-container text-primary font-semibold";
           else if (t.tag === "ADJ") colorClass = "bg-tertiary-fixed text-on-tertiary-fixed-variant";
+          else if (t.tag === "PREP") colorClass = "bg-surface-container-high text-secondary";
           
           tokenContainer.innerHTML += `
             <div class="flex flex-col items-center px-3 py-1.5 rounded-lg ${colorClass}">
@@ -443,7 +445,8 @@ tailwind.config = {
       } else {
           const formattedParams = paramsList.map((p, idx) => {
             const isLast = idx === paramsList.length - 1;
-            const colorClass = idx === 0 ? "text-inverse-primary" : (idx === 1 ? "text-inverse-primary" : "text-tertiary-fixed");
+            // Make the first two arguments Blue, and the rest Cyan
+            const colorClass = (idx === 0 || idx === 1) ? "text-inverse-primary" : "text-tertiary-fixed";
             return `<span class="${colorClass} font-semibold">${p}</span>` + (!isLast ? `<span class="text-secondary-fixed">, </span>` : '');
           }).join('');
           meaningFormula.innerHTML = `<span class="text-tertiary-fixed-dim font-bold">${pred}</span><span class="text-secondary-fixed">(</span>${formattedParams}<span class="text-secondary-fixed">)</span>`;
