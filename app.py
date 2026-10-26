@@ -59,6 +59,7 @@ VERBS = {
     "STUDY": ["study", "studies", "studied", "studying"], "SUBMIT": ["submit", "submits", "submitted", "submitting"],
     "SWIM": ["swim", "swims", "swam", "swum", "swimming"], "TAKE": ["take", "takes", "took", "taken", "taking"],
     "TALK": ["talk", "talks", "talked", "talking"], "TEACH": ["teach", "teaches", "taught", "teaching"],
+    "BREAK":   ["break", "breaks", "broke", "broken", "breaking"],
     "TELL": ["tell", "tells", "told", "telling"], "THINK": ["think", "thinks", "thought", "thinking"],
     "THROW": ["throw", "throws", "threw", "thrown", "throwing"], "TOUCH": ["touch", "touches", "touched", "touching"],
     "TRY": ["try", "tries", "tried", "trying"], "UNDERSTAND": ["understand", "understands", "understood", "understanding"],
